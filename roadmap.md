@@ -106,6 +106,7 @@ Scegliere release stabili e compatibili tra loro. Non adottare prerelease solo p
 
 ### Alla conclusione di una fase
 
+- Aggiungere ` (Completata)` al titolo della fase solo dopo aver verificato tutti i suoi criteri di completamento. Aggiornare anche lo stato nella sezione 10; se restano verifiche o attività richieste, lasciare la fase aperta.
 - Eseguire le verifiche pertinenti e aprire la pagina nel browser quando disponibile.
 - Distinguere chiaramente build riuscita, controllo statico, verifica con dati simulati e prova reale delle API.
 - Riportare risultato, modalità di avvio e limiti ancora presenti.
@@ -114,7 +115,7 @@ Scegliere release stabili e compatibili tra loro. Non adottare prerelease solo p
 
 ## 6. Fasi di sviluppo
 
-### Fase 1 — Prima pagina interattiva Rust nel browser
+### Fase 1 — Prima pagina interattiva Rust nel browser (Completata)
 
 **Obiettivo:** verificare l'intera catena Rust → WASM → browser con un esempio piccolo e comprensibile.
 
@@ -290,10 +291,10 @@ Non introdurre un'infrastruttura di test ampia per un contatore o per semplici m
 - **API esterne:** disponibilità, schema e CORS possono cambiare; gestire gli errori senza nascondere il problema.
 - **Sicurezza del frontend:** il modulo WASM è scaricabile dal browser e non è un luogo adatto a conservare segreti.
 
-## 10. Stato iniziale e ripresa del lavoro
+## 10. Stato del progetto e ripresa del lavoro
 
-Al momento della redazione, la directory di destinazione non contiene ancora l'applicazione. La scelta dello stack e l'approccio incrementale sono concordati; nessuna fase di implementazione è dichiarata completata da questo documento.
+La Fase 1 è completata: pagina Leptos CSR con contatore, panic hook e CSS responsive. Verificati compilazione WASM, build di produzione, avvio locale, contatore senza ricaricamento, reset al refresh, utilizzo da tastiera e assenza di overflow a 375 e 1280 px. Nessun errore applicativo osservato in console. I comandi di preparazione e avvio sono nel `README.md`.
 
-Prima attività prevista: **Fase 1 — Prima pagina interattiva Rust nel browser**, quando richiesta dall'utente.
+Prossima fase prevista: **Fase 2 — Una scheda attore con dati locali**, quando richiesta dall'utente.
 
-Alla ripresa, verificare sempre lo stato reale dei file: questa sezione descrive il punto di partenza, non lo stato corrente garantito del progetto.
+Alla ripresa, verificare sempre lo stato reale dei file prima di proseguire.
