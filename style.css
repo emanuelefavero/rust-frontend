@@ -1,13 +1,39 @@
-:root { font-family: system-ui, sans-serif; color: #18332e; background: #f3f6ef; }
+:root { font-family: system-ui, sans-serif; color: #18332e; background: #f3f6ef; font-synthesis: none; }
 * { box-sizing: border-box; }
 body { margin: 0; }
-main { width: min(100% - 2.5rem, 48rem); margin: clamp(3rem, 12vh, 8rem) auto; }
-.eyebrow { color: #446357; font-size: .85rem; font-weight: 650; }
-h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.05; letter-spacing: -.045em; margin: 1rem 0; }
-.description { max-width: 36rem; font-size: 1.1rem; line-height: 1.7; }
-.counter { background: white; border: 1px solid #d7e1d7; border-radius: 1.5rem; padding: 2rem; margin-top: 2.5rem; }
-.counter p { margin: 0; }
-output { display: block; font-size: 4rem; font-weight: 700; margin: .5rem 0 1.5rem; overflow-wrap: anywhere; }
-button { font: inherit; font-weight: 650; border: 0; border-radius: .75rem; padding: .9rem 1.5rem; background: #215943; color: white; cursor: pointer; min-height: 48px; }
+main { width: min(100% - 3rem, 78rem); margin: 0 auto; }
+header { padding: clamp(2.5rem, 7vw, 5rem) 0 2rem; max-width: 52rem; }
+.eyebrow { color: #446357; font-size: .75rem; font-weight: 750; letter-spacing: .15em; }
+h1 { font-size: clamp(2.6rem, 7vw, 5rem); line-height: 1.05; letter-spacing: -.055em; margin: 1.2rem 0; }
+.description { font-size: 1.15rem; line-height: 1.7; max-width: 42rem; }
+.source, footer { color: #53675c; font-size: .85rem; line-height: 1.6; }
+.filters { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem; background: #e5ebdf; padding: 1.25rem; border-radius: 1rem; }
+label { display: grid; gap: .5rem; font-size: .85rem; font-weight: 650; min-width: 0; }
+.search { flex: 1; min-width: 12rem; }
+input, select, button { font: inherit; min-height: 48px; border-radius: .6rem; padding: .75rem 1rem; }
+input, select { width: 100%; background: white; border: 1px solid #98ad9b; color: #18332e; }
+button { font-weight: 650; border: 0; background: #215943; color: white; cursor: pointer; }
 button:hover { background: #173f30; }
-button:focus-visible { outline: 3px solid #b45220; outline-offset: 4px; }
+.secondary { background: white; color: #215943; border: 1px solid #98ad9b; }
+.secondary:hover { background: #f3f6ef; }
+:focus-visible { outline: 3px solid #b45220; outline-offset: 3px; }
+.results { margin: 1.8rem 0 1rem; color: #446357; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.card { background: white; border: 1px solid #d7e1d7; border-radius: 1rem; overflow: hidden; animation: appear .3s ease-out; min-width: 0; }
+.portrait { position: relative; aspect-ratio: 4 / 3; background: #dce4d7; isolation: isolate; }
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; position: relative; z-index: 1; }
+.portrait img[hidden] { display: none; }
+.image-placeholder { position: absolute; inset: 0; display: grid; place-items: center; padding: 1rem; color: #446357; text-align: center; z-index: 0; }
+.badge { position: absolute; z-index: 2; bottom: .8rem; left: 1rem; background: #18332e; color: white; padding: .3rem .65rem; border-radius: 2rem; font-size: .75rem; text-transform: capitalize; }
+.card-body { padding: 1.5rem; overflow-wrap: anywhere; }
+h2 { font-size: 1.4rem; letter-spacing: -.025em; margin: 0 0 .5rem; }
+.metadata { color: #53675c; font-size: .85rem; margin: 0 0 1.2rem; }
+.biography { line-height: 1.7; font-size: .95rem; }
+.details { font-size: .8rem; line-height: 1.7; color: #446357; }
+.notice { background: white; border: 1px solid #d7e1d7; border-radius: 1rem; padding: 2rem; margin: 2rem 0; line-height: 1.6; }
+.error { border-color: #b45220; }
+footer { border-top: 1px solid #d7e1d7; margin-top: 3rem; padding: 1.5rem 0; }
+@keyframes appear { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (max-width: 950px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { main { width: calc(100% - 2rem); } .grid { grid-template-columns: minmax(0, 1fr); } .filters { display: grid; } .search { min-width: 0; } .card-body { padding: 1.25rem; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }

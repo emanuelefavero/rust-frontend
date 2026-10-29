@@ -6,3 +6,7 @@ edition = "2024"
 [dependencies]
 leptos = { version = "0.8", features = ["csr"] }
 console_error_panic_hook = "0.1"
+serde = { version = "1", features = ["derive"] }
+gloo-net = "0.6"
+gloo-timers = { version = "0.3", features = ["futures"] }
+futures = "0.3"

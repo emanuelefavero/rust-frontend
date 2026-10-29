@@ -140,7 +140,7 @@ Concetti da spiegare: ruolo di Cargo e Trunk, modulo WASM, componente, macro del
 
 Non aggiungere chiamate API, routing o struttura completa del catalogo in questa fase.
 
-### Fase 2 — Una scheda attore con dati locali
+### Fase 2 — Una scheda attore con dati locali (Completata)
 
 **Obiettivo:** costruire la prima parte reale dell'interfaccia senza dipendere dalla rete.
 
@@ -160,7 +160,7 @@ Criteri di completamento:
 
 Concetti da spiegare: strutture, stringhe, proprietà dei componenti e passaggio dei dati.
 
-### Fase 3 — Primo elenco reale dall'API
+### Fase 3 — Primo elenco reale dall'API (Completata)
 
 **Obiettivo:** ottenere il primo catalogo funzionante con contenuti reali.
 
@@ -185,7 +185,7 @@ Concetti da spiegare: operazioni asincrone, deserializzazione, `Result`, `Option
 
 **Primo traguardo applicativo:** aprire il sito Rust e vedere un catalogo alimentato da un'API pubblica.
 
-### Fase 4 — Catalogo completo e presentazione responsive
+### Fase 4 — Catalogo completo e presentazione responsive (Completata)
 
 **Obiettivo:** mostrare attori e attrici in un catalogo coerente.
 
@@ -207,7 +207,7 @@ Criteri di completamento:
 - L'errore di una sorgente segue il comportamento scelto.
 - La griglia è utilizzabile su mobile e desktop.
 
-### Fase 5 — Interazioni incrementali
+### Fase 5 — Interazioni incrementali (Completata)
 
 **Obiettivo:** esplorare la reattività aggiungendo una sola funzionalità per intervento.
 
@@ -231,7 +231,7 @@ Per ciascuna funzionalità:
 
 Non è necessario riprodurre tutti i filtri o gli effetti dell'app React.
 
-### Fase 6 — Verifica finale e possibili evoluzioni
+### Fase 6 — Verifica finale e possibili evoluzioni (Completata)
 
 **Obiettivo:** consolidare la versione raggiunta, quando l'utente considera sufficiente il set di funzionalità.
 
@@ -293,8 +293,12 @@ Non introdurre un'infrastruttura di test ampia per un contatore o per semplici m
 
 ## 10. Stato del progetto e ripresa del lavoro
 
-La Fase 1 è completata: pagina Leptos CSR con contatore, panic hook e CSS responsive. Verificati compilazione WASM, build di produzione, avvio locale, contatore senza ricaricamento, reset al refresh, utilizzo da tastiera e assenza di overflow a 375 e 1280 px. Nessun errore applicativo osservato in console. I comandi di preparazione e avvio sono nel `README.md`.
+Le Fasi 1–6 sono completate. La pagina iniziale è evoluta nel catalogo Leptos CSR con 40 attori e 22 attrici dalle API reali, ID prefissati per sorgente, campi facoltativi e immagini mancanti gestiti, richieste concorrenti e timeout di 20 secondi. Un errore di una sorgente interrompe il catalogo completo e offre Riprova.
 
-Prossima fase prevista: **Fase 2 — Una scheda attore con dati locali**, quando richiesta dall'utente.
+Interazioni completate: categoria tutti/attori/attrici, ricerca per nome, messaggio senza risultati, reset e ordinamento originale/A–Z/Z–A. Signals e Memo mantengono i filtri locali; nessun caricamento incrementale, routing o backend introdotto.
 
-Alla ripresa, verificare sempre lo stato reale dei file prima di proseguire.
+Verifiche finali: build di produzione riuscita e artefatti serviti localmente via Python; caricamento reale nel browser di tutte le 62 persone; filtro attrici (22), ordinamento A–Z/Z–A, ricerca vuota e reset (62); navigazione dei quattro controlli da tastiera e reset con Invio; layout a 375 e 1280 px senza overflow, controllo visivo mobile e desktop. Con fixture nel browser verificati scheda locale, campi mancanti, immagine rotta e testo lungo, elenco vuoto, JSON non valido, errore HTTP 503 della sola sorgente attrici, fallimento di rete della sorgente attori e recupero dei 62 dati reali con Riprova. Gli ID 1 presenti in entrambe le sorgenti sono renderizzati senza collisioni.
+
+Nessun errore applicativo osservato durante il caricamento reale. I fallimenti intenzionali delle fixture producono i previsti messaggi di rete in console; resta un avviso Chromium sul preload con integrity generato da Trunk. Comandi di avvio e spiegazione dei concetti Rust nel `README.md`.
+
+Le evoluzioni opzionali della Fase 6 rimangono fuori ambito. Alla ripresa, verificare sempre lo stato reale dei file prima di proseguire.
