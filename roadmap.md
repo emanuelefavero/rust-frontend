@@ -106,7 +106,7 @@ Scegliere release stabili e compatibili tra loro. Non adottare prerelease solo p
 
 ### Alla conclusione di una fase
 
-- Aggiungere ` (Completata)` al titolo della fase solo dopo aver verificato tutti i suoi criteri di completamento. Aggiornare anche lo stato nella sezione 10; se restano verifiche o attività richieste, lasciare la fase aperta.
+- Aggiungere la parola `(Completata)` in fondo al titolo della fase solo dopo aver verificato tutti i suoi criteri di completamento. Aggiornare anche lo stato nella sezione 10; se restano verifiche o attività richieste, lasciare la fase aperta.
 - Eseguire le verifiche pertinenti e aprire la pagina nel browser quando disponibile.
 - Distinguere chiaramente build riuscita, controllo statico, verifica con dati simulati e prova reale delle API.
 - Riportare risultato, modalità di avvio e limiti ancora presenti.
